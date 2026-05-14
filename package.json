@@ -1,0 +1,52 @@
+{
+  "name": "md2r2",
+  "version": "0.1.0",
+  "description": "CLI: 提取 Markdown 中的本地图片/资源并上传到 Cloudflare R2，自动把链接替换为公开 CDN 地址",
+  "keywords": [
+    "markdown",
+    "cloudflare",
+    "r2",
+    "cdn",
+    "upload",
+    "image",
+    "cli",
+    "npx"
+  ],
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "md2r2": "src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/index.js",
+    "prepublishOnly": "node src/index.js --help >/dev/null"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuqssq/md2r2"
+  },
+  "bugs": {
+    "url": "https://github.com/xuqssq/md2r2/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "yarn@1.22.22",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1046.0",
+    "chalk": "^5.6.2",
+    "mime-types": "^3.0.2",
+    "p-limit": "^7.3.0"
+  }
+}
