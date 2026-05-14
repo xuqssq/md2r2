@@ -1,6 +1,6 @@
 {
   "name": "md2r2",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "CLI: 提取 Markdown 中的本地图片/资源并上传到 Cloudflare R2，自动把链接替换为公开 CDN 地址",
   "keywords": [
     "markdown",
@@ -45,6 +45,7 @@
   "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1046.0",
+    "@smithy/node-http-handler": "^4.7.2",
     "chalk": "^5.6.2",
     "mime-types": "^3.0.2",
     "p-limit": "^7.3.0"

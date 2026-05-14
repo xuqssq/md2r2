@@ -186,8 +186,15 @@ async function runUpload({ filePath, options }) {
           client,
           config,
           absolutePath,
-          onProgress: ({ phase, key }) => {
-            if (phase === 'upload') logger.info(`${tag} 上传中 → ${key}`);
+          onProgress: (event) => {
+            if (event.phase === 'upload') {
+              logger.info(`${tag} 上传中 → ${event.key}`);
+            } else if (event.phase === 'retry') {
+              const reason = event.error?.message || String(event.error);
+              logger.warn(
+                `${tag} 第 ${event.attempt}/${event.retries} 次重试 (${event.delayMs}ms 后): ${reason}`
+              );
+            }
           },
         });
 
