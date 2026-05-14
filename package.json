@@ -1,6 +1,6 @@
 {
   "name": "md2r2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CLI: 提取 Markdown 中的本地图片/资源并上传到 Cloudflare R2，自动把链接替换为公开 CDN 地址",
   "keywords": [
     "markdown",
